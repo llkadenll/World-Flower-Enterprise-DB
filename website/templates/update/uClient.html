@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="insertForm">
+    <form class="form-horizontal" method="POST">
+      <h3 align="center">Update</h3>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="name">Name:</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="name" name="name" maxlength="20" placeholder="Enter name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="surname">Surname:</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="surname" name="surname" maxlength="30" placeholder="Enter surname">
+          </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="company">Company:</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="company" name="company" maxlength="30" placeholder="Enter company">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pesel">Client with a pesel number:</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="pesel" name="pesel" minlength="11" maxlength="11" placeholder="Enter pesel" required>
+            </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">Update</button>
+          </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

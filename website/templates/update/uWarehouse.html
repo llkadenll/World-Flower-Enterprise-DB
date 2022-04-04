@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="insertForm">
+    <form class="form-horizontal" method="POST">
+      <h3 align="center">Update</h3>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="flower_quantity">Flower quantity:</label>
+        <div class="col-sm-3">
+        <input type="number" class="form-control" id="flower_quantity" name="flower_quantity" min="0" placeholder="Enter flower quantity" >
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="seed_quantity">Seed quantity:</label>
+        <div class="col-sm-3">
+          <input type="number" class="form-control" id="seed_quantity" name="seed_quantity" min="0" placeholder="Enter seed quantity">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="flower_price">Flower price:</label>
+        <div class="col-sm-3">
+          <input type="number" class="form-control" id="flower_price" name="flower_price" min="0" placeholder="Enter flower price">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="seed_price">Seed price:</label>
+        <div class="col-sm-3">
+          <input type="number" class="form-control" id="seed_price" name="seed_price" min="0" placeholder="Enter seed price">
+        </div>
+      </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="address">Warehouse with address:</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="address" name="address" maxlength="35" placeholder="Enter address" required>
+            </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary btn-update">Update</button>
+          </div>
+        </div>
+    </form>
+    <form class="form-horizontal" method="POST" action="/update/warehouse/lower">
+      <div class="form-group">
+        <br><h5>Make a discount:</h5><br>
+        <label class="control-label col-xlg-2" for="discount_percentage">Enter the percentage by which you want to lower the flower price:</label>
+        <div class="col-sm-3">
+        <input type="number" class="form-control" id="discount_percentage" name="discount_percentage" maxlength="2" placeholder="Enter percentage" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="discount_address">Warehouse with address:</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" id="discount_address" name="discount_address" maxlength="35" placeholder="Enter address" required>
+        </div>
+    </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-primary btn-lower">Lower</button>
+        </div>
+      </div>
+    </form>
+    <form class="form-horizontal" method="POST" action="/update/warehouse/increase">
+      <div class="form-group">
+        <br><h5>Make a price increase:</h5><br>
+        <label class="control-label col-xlg-2" for="price_increase_percentage">Enter the percentage by which you want to increase the price of flowers:</label>
+        <div class="col-sm-3">
+        <input type="number" class="form-control" id="price_increase_percentage" name="price_increase_percentage" maxlength="2" placeholder="Enter percentage" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="price_increase_address">Warehouse with address:</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" id="price_increase_address" name="price_increase_address" maxlength="35" placeholder="Enter address" required>
+        </div>
+    </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-primary btn-increase">Increase</button>
+        </div>
+      </div>
+    </form>
+</div>
+{% endblock %}

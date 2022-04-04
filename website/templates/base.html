@@ -1,0 +1,136 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <title>World Flower</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Select
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/select/employee">Employees</a>
+            <a class="dropdown-item" href="/select/lodging">Lodgings</a>
+            <a class="dropdown-item" href="/select/warehouse">Warehouses</a>
+            <a class="dropdown-item" href="/select/farmland">Farmlands</a>
+            <a class="dropdown-item" href="/select/clients">Clients</a>
+            <a class="dropdown-item" href="/select/equipment">Equipment</a>
+            <a class="dropdown-item" href="/select/sowing">Sowings</a>
+            <a class="dropdown-item" href="/select/harvest">Harvests</a>
+            <a class="dropdown-item" href="/select/weeding">Weedings</a>
+            <a class="dropdown-item" href="/select/transaction">Transactions</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Insert
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/insert/employee">Employee</a>
+            <a class="dropdown-item" href="/insert/lodging">Lodging</a>
+            <a class="dropdown-item" href="/insert/warehouse">Warehouse</a>
+            <a class="dropdown-item" href="/insert/farmland">Farmland</a>
+            <a class="dropdown-item" href="/insert/client">Client</a>
+            <a class="dropdown-item" href="/insert/equipment">Equipment</a>
+            <a class="dropdown-item" href="/insert/sowing">Sowings</a>
+            <a class="dropdown-item" href="/insert/harvest">Harvests</a>
+            <a class="dropdown-item" href="/insert/weeding">Weedings</a>
+            <a class="dropdown-item" href="/insert/transaction">Transactions</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Update
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/update/employee">Employee</a>
+            <a class="dropdown-item" href="/update/lodging">Lodging</a>
+            <a class="dropdown-item" href="/update/warehouse">Warehouse</a>
+            <a class="dropdown-item" href="/update/farmland">Farmland</a>
+            <a class="dropdown-item" href="/update/client">Client</a>
+            <a class="dropdown-item" href="/update/equipment">Equipment</a>
+            <a class="dropdown-item" href="/update/sowing">Sowings</a>
+            <a class="dropdown-item" href="/update/harvest">Harvests</a>
+            <a class="dropdown-item" href="/update/weeding">Weedings</a>
+            <a class="dropdown-item" href="/update/transaction">Transactions</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Delete
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/delete/employee">Employee</a>
+            <a class="dropdown-item" href="/delete/lodging">Lodging</a>
+            <a class="dropdown-item" href="/delete/warehouse">Warehouse</a>
+            <a class="dropdown-item" href="/delete/farmland">Farmland</a>
+            <a class="dropdown-item" href="/delete/client">Client</a>
+            <a class="dropdown-item" href="/delete/equipment">Equipment</a>
+            <a class="dropdown-item" href="/delete/sowing">Sowings</a>
+            <a class="dropdown-item" href="/delete/harvest">Harvests</a>
+            <a class="dropdown-item" href="/delete/weeding">Weedings</a>
+            <a class="dropdown-item" href="/delete/transaction">Transactions</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %} {% for category, message in messages %}
+  {% if category == 'error' %}
+    <div class="alert alert-danger alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% else %}
+    <div class="alert alert-success alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endif %} {% endfor %} {% endif %} {% endwith %}
+  <div class="container" style="margin-top: 30px;">
+      {% block content%}{% endblock %}
+  </div>
+  {% block js %}{% endblock %}
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='index.js') }}"
+    ></script>
+    <!-- <script type="text/javascript" src="./update/js/uClient.js"></script> -->
+</body>
+</html>

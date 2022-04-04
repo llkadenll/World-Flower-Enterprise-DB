@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="insertForm">
+    <form class="form-horizontal" method="POST">
+      <h3 align="center">Insertion</h3>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="address">Address:</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" id="address" name="address" maxlength="35" placeholder="Enter address" required>
+        </div>
+      </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="flower_quantity">Flower quantity:</label>
+            <div class="col-sm-3">
+            <input type="number" class="form-control" id="flower_quantity" name="flower_quantity" min="0" placeholder="Enter flower quantity" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="seed_quantity">Seed quantity:</label>
+            <div class="col-sm-3">
+              <input type="number" class="form-control" id="seed_quantity" name="seed_quantity" min="0" placeholder="Enter seed quantity" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="flower_price">Flower price:</label>
+            <div class="col-sm-3">
+              <input type="number" class="form-control" id="flower_price" name="flower_price" min="0" placeholder="Enter flower price" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="seed_price">Seed price:</label>
+            <div class="col-sm-3">
+              <input type="number" class="form-control" id="seed_price" name="seed_price" min="0" placeholder="Enter seed price" required>
+            </div>
+          </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">Insert</button>
+          </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

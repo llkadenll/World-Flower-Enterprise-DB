@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="view">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Pesel</th>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Company</th>
+          </tr>
+        </thead>
+          {% for row in rows %}
+          <tr>
+          <th scope="row"></th>
+          <td>{{ row[0] }}</td>
+          <td>{{ row[1] }}</td>
+          <td>{{ row[2] }}</td>
+          <td>{{ row[3] }}</td>
+          </tr>
+          {% endfor %}
+      </table>
+</div>
+{% endblock %}

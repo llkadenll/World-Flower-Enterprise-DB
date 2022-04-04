@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="insertForm">
+    <form class="form-horizontal" method="POST">
+      <h3 align="center">Update</h3>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="name">Name:</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="name" name="name" maxlength="20" placeholder="Enter name">
+          </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="model">Model:</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="model" name="model" maxlength="25" placeholder="Enter model">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="warranty_validity">Warranty validity:</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="warranty_validity" name="warranty_validity" placeholder="Enter warranty_validity">
+            </div>
+          </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="id">Equipment with a id:</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="id" name="id" min="0" placeholder="Enter id">
+            </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">Update</button>
+          </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
